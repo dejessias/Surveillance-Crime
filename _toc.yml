@@ -1,0 +1,10 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: docs/home
+chapters:
+- file: docs/Datastets
+- file: docs/Perspective 1
+- file: docs/Perspective 2
+- file: docs/Conclusion
