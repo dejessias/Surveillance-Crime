@@ -1,11 +1,10 @@
 /* -- .bd-container and .bd-container__inner both need to adjust ---------- */
 /* -- this so 'outer container' grows with browser (no L/R 'dead space') -- */
-.bd-container {
-    max-width: 99%;
-}
+/* .bd-container { */
+    /* max-width: 99%; */
+/* } */
 
 /* -- this so the 'inner container' fills the outer container -------------- */
-.bd-container .bd-container__inner {
-    max-width: 99%;
-}
-
+/* .bd-container .bd-container__inner { */
+    /* max-width: 99%; */
+/* } */
