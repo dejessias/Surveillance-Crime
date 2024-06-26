@@ -4,7 +4,7 @@
 format: jb-book
 root: docs/home
 chapters:
-- file: docs/Datastets
+- file: docs/Datasets
 - file: docs/Perspective 1
 - file: docs/Perspective 2
 - file: docs/Conclusion
