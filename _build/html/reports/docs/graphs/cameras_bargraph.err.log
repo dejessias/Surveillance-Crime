@@ -1,0 +1,112 @@
+Traceback (most recent call last):
+  File "E:\Programs\Anaconda\envs\jupyterbook\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "E:\Programs\Anaconda\envs\jupyterbook\lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "E:\Programs\Anaconda\envs\jupyterbook\lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "E:\Programs\Anaconda\envs\jupyterbook\lib\asyncio\base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "E:\Programs\Anaconda\envs\jupyterbook\lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "E:\Programs\Anaconda\envs\jupyterbook\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "E:\Programs\Anaconda\envs\jupyterbook\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+cctv = pd.read_csv("datasets/cctv.csv")
+
+df = cctv
+
+asia = {'Singapore', 'Myanmar', 'Yemen', 'Thailand', 'Philippines', 'Indonesia', 'Israel', 'Iraq', 'Pakistan', 'South Korea', 'India', 'Vietnam', 'Malaysia', 'Saudi Arabia', 'Japan', 'China', 'Taiwan', 'Afghanistan', 'Hong Kong', 'Turkey', 'Bangladesh', 'Iran'}
+europe = {'Spain', 'Russia', 'Italy', 'Germany', 'United Kingdom'}
+north_america = {'Mexico', 'United States', 'Dominican Republic', 'Canada'}
+south_america = {'Mexico', 'United States', 'Dominican Republic', 'Canada'}
+africa = {'Kenya', 'Egypt', 'Ethiopia', 'Nigeria', 'Madagascar', 'Burkina Faso', 'South Africa', 'Cameroon', 'Morocco', 'Uganda', 'Sudan', 'Tanzania', 'Angola', 'Senegal'}
+oceania = {'Australia'}
+
+# Map each country to its continent
+def get_continent(country):
+    if country in asia:
+        return 'Asia'
+    elif country in europe:
+        return 'Europe'
+    elif country in north_america:
+        return 'North America'
+    elif country in south_america:
+        return 'South America'
+    elif country in africa:
+        return 'Africa'
+    elif country in oceania:
+        return 'Oceania'
+    else:
+        return 'Asia'
+
+df['Continent'] = df['Country'].apply(get_continent)
+
+# Exclude cities in China
+df_non_china = df[df['Country'] != 'China']
+
+# Calculate the mean value for cities in China
+china_mean = df[df['Country'] == 'China']['# of CCTV Cameras per 1,000 People'].mean()
+
+# Create a new DataFrame for the mean value
+mean_china_df = pd.DataFrame({
+    'City': ['Est. of cities in China'],
+    '# of CCTV Cameras per 1,000 People': [china_mean],
+    'Continent': ['Asia'],
+    'Country': ['China']
+})
+
+# Concatenate the two DataFrames
+final_df = pd.concat([df_non_china, mean_china_df], ignore_index=True)
+
+# Sort the DataFrame by the number of CCTV cameras per 1,000 people
+final_df = final_df.sort_values(by='# of CCTV Cameras per 1,000 People', ascending=False)
+
+# Select the top 50 values
+top_50_df = final_df.head(50)
+
+# COLORS
+# Define custom colors for each continent
+color_map = {
+    'Asia': 'rgb(238, 28, 47)',
+    'Europe': 'rgb(0, 61, 153)',
+    'North America': 'green',
+    'South America': 'yellow',
+    'Africa': 'black',
+    'Oceania': 'orange',
+    'Other': 'grey'
+}
+
+# Create the bar graph
+fig = px.bar(top_50_df, x='City', y='# of CCTV Cameras per 1,000 People', color='Continent',
+             title='China and the Top 50 Cities by Number of CCTV Cameras per 1,000 People',
+             hover_data={'Country': True}, color_discrete_map=color_map,
+             labels={'# of CCTV Cameras per 1,000 People': 'CCTV Cameras per 1,000 People'})
+
+# Customize hover label formatting
+fig.update_traces(
+    hovertemplate='City: %{x}<br>Country: %{customdata[0]}<br># of CCTV Cameras per 1000 people: %{y}'
+)
+
+
+fig.update_layout(
+    height = 500,
+    xaxis={'categoryorder':'total descending'}
+)
+
+fig.show()
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[1], line 1[0m
+[1;32m----> 1[0m cctv [38;5;241m=[39m [43mpd[49m[38;5;241m.[39mread_csv([38;5;124m"[39m[38;5;124mdatasets/cctv.csv[39m[38;5;124m"[39m)
+[0;32m      3[0m df [38;5;241m=[39m cctv
+[0;32m      5[0m asia [38;5;241m=[39m {[38;5;124m'[39m[38;5;124mSingapore[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mMyanmar[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mYemen[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mThailand[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mPhilippines[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mIndonesia[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mIsrael[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mIraq[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mPakistan[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mSouth Korea[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mIndia[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mVietnam[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mMalaysia[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mSaudi Arabia[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mJapan[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mChina[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mTaiwan[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mAfghanistan[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mHong Kong[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mTurkey[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mBangladesh[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mIran[39m[38;5;124m'[39m}
+
+[1;31mNameError[0m: name 'pd' is not defined
+
