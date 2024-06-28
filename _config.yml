@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Surveillance & Crime # Change this to your book title.
-author: Jesse van Bakel, Hajar Benmimoun, Jack de Boer & Lisa van Oosten # Change this to your name (or your team/organization name).
+author: Jesse van Bakel, Hajar Benmimoun, Jack de Boer & Lisa van Oosten (G2) # Change this to your name (or your team/organization name).
 copyright: "2024"
 
 logo: _static/images/surv&crime.png
