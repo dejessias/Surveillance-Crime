@@ -1,7 +1,13 @@
 # Introduction
 
-In recent decades, the implementation of Closed-Circuit Television (CCTV) systems to combat crime has gained substantial popularity and prevalence (Pavone & Esposti, 2012). CCTV has become one of the fastest-growing segments of contemporary security practices, often framed as a cost-efficient tool for enhancing public safety (Marx, 2015; Ezzat et al., 2021; Zabłocki et al., 2014). This trend has seen global adoption, such as in cities across the UK, USA, and China (Lyon, 2005; Zabłocki et al., 2014), and surged post-9/11 due to intensified concerns over terrorism and crime (Elharrouss et al., 2021; Lyon, 2005; Marx, 2015; Monahan, 2009). As a result, densely populated urban areas have become hubs for extensive video surveillance, with some cities deploying nearly half a million cameras each (McCall et al., 2021).
+In recent decades, the implementation of Closed-Circuit Television (CCTV) to combat crime has gained prevalence (Pavone & Esposti, 2012). Framed by security authorities as a cost-efficient tool, it has become one of the fastest-growing security practices. (Ezzat et al., 2021). Densely populated urban areas have become hubs for extensive surveillance, with some cities deploying nearly half a million cameras each (McCall et al., 2021).
 
-Despite the perceived benefits, there is debate over the effectiveness of relying solely on CCTV for crime prevention, as crime is affected by various socio-economic and demographic factors (Pavone & Esposti, 2012). This raises the question of whether crime prevention should focus on technological tools or address it as a structural issue. Therefore, this datastory will examine the effectiveness of CCTV as portrayed by various policing authorities and explore whether a structural and socio-systemic approach might be more effective in combating crime, investigating patterns of human development dimensions and their correlation with crime rates globally.
+On the other hand, the effectiveness of CCTV as crime prevention remains debatable. While criminal activity is influenced by human developmental factors, the question of whether crime prevention should rely upon technological tools or be addressed as a socio-structural issue can be forwarded (Pavone & Esposti, 2012).
 
-While having CCTV as a case study, we aim to set an example to critically examine the introduction of ubiquitous technologies into ordinary life, questioning whether they truly enhance dimensions of human development. With this, we will question how technologies are framed as solutions or temporary fixes to address surface-level issues, symbols of wealth and power, and what they secretly reveal about the governments and societies that implement them.
+Using CCTV as a case study, this data story explores how technologies are promoted as temporary fixes to address surface-level issues, symbols of wealth and power, and what they secretly reveal about the governments and societies that implement them.
+
+**This project was made by:** <br>
+* Hajar Benmimoun
+* Jack de Boer
+* Jesse van Bakel
+* Lisa van Oosten
